@@ -1,4 +1,4 @@
-import { test, describe, expect } from '@playwright/test'
+const { test, describe, expect } = require('@playwright/test')
 
 describe('Pokedex', () => {
   test('front page can be opened', async ({ page }) => {
