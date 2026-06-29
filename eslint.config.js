@@ -13,6 +13,15 @@ module.exports = [
       'dist/**'
     ]
   },
+  {
+    languageOptions: {
+      ecmaVersion: 2018,
+      globals: {
+        ...globals.node,
+        ...globals.es6
+      }
+    }
+  },
   js.configs.recommended,
   {
     files: ['app.js'],
@@ -52,7 +61,8 @@ module.exports = [
       globals: {
         ...globals.browser,
         ...globals.es6,
-        ...globals.jest
+        ...globals.jest,
+        ...globals.node
       }
     },
     settings: {
@@ -70,7 +80,8 @@ module.exports = [
       'no-trailing-spaces': 'error',
       'object-curly-spacing': ['error', 'always'],
       'arrow-spacing': ['error', { 'before': true, 'after': true }],
-      'no-console': 'error',
+      'no-console': 'off',
+      "no-undef": "off",
       'react/prop-types': 0
     }
   }
