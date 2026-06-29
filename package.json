@@ -7,6 +7,7 @@
     "start": "webpack-dev-server --open --mode development --port 8080",
     "start-prod": "node app.js",
     "test": "jest",
+    "test:e2e": "playwright test --project=chromium --project=firefox",
     "eslint": "eslint \"**/*.{js,jsx}\"",
     "build": "webpack --mode production"
   },
@@ -26,21 +27,29 @@
   "dependencies": {
     "axios": "^1.13.6",
     "express": "^5.2.1",
+    "playwright": "^1.61.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-router-dom": "^7.13.1"
   },
   "jest": {
     "testEnvironment": "jsdom",
-    "setupFiles": ["<rootDir>/jest.setup.js"]
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
+    ],
+    "testPathIgnorePatterns": [
+      "e2e-tests"
+    ]
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
     "@babel/plugin-transform-runtime": "^7.29.0",
     "@babel/preset-env": "^7.29.0",
     "@babel/preset-react": "^7.28.5",
+    "@playwright/test": "^1.61.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
+    "@types/node": "^26.0.1",
     "babel-jest": "^30.3.0",
     "babel-loader": "^10.1.1",
     "css-loader": "^7.1.4",
