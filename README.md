@@ -2,6 +2,10 @@
 
 This repository is used for the CI/CD module of the Full Stack Open course
 
+# Link to app
+
+https://fs-pokedex-main-proud-river-704.fly.dev/
+
 ## Commands
 
 Start by running `npm install` inside the project folder
